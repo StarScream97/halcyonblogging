@@ -6,12 +6,12 @@
           <div v-for="user in users" class="user" :key="user.index">
               <div class="profileImg"><router-link v-bind:to="{ name: 'singleUser', params: { userName:user.userName}}" class="authorName"><img :src="user.profileImg" alt=""></router-link></div>
               <div class="userDetails">
-                  <p class="name">{{user.name}}</p>
+                  <p class="name">Name: {{user.name}}</p>
                   <p class="username">@{{user.userName}}</p>
-                  <p class="email">{{user.email}}</p>
-                  <div v-if="user.bio"><p class="bio" >{{user.bio}}</p></div>
-                  <div v-if="user.website"><p class="website" >{{user.website}}</p></div>
-                  <div v-if="user.phone"><p class="phone" >{{user.phone}}</p></div>
+                  <p class="email">Email: {{user.email}}</p>
+                  <div v-if="user.bio"><p class="bio" >Bio: {{user.bio}}</p></div>
+                  <div v-if="user.website"><p class="website" >Website: {{user.website}}</p></div>
+                  <div v-if="user.phone"><p class="phone" >Phone: {{user.phone}}</p></div>
             </div>
           </div>
       </div>
@@ -52,7 +52,7 @@ export default {
 }
 .user {
   grid-column: span 4;
-  grid-row: span 7;
+  grid-row: span 8;
   transition: all 1s;
   border-radius: 5px;
    margin-top: 2em;
@@ -78,11 +78,11 @@ export default {
 .username {
   margin-top: -1.5em;
   font-family: "Poppins";
-  font-size: 0.8rem;
+  font-size: 1rem;
+  color: black;
 }
 
-.bio,
-.email,
+.bio,.email,
 .website,
 .phone {
   font-family: "Neuton";
@@ -91,6 +91,8 @@ export default {
   border-bottom: 1px solid lightgray;
   padding: 4px 0;
 }
+
+
 
 .userDetails p {
   margin: 4px 0;
@@ -102,7 +104,7 @@ export default {
 }
 .profileImg img {
   width: 100%;
-  min-height: 250px;
+  height: 320px;
   border-radius: 5px;
 }
 .name {

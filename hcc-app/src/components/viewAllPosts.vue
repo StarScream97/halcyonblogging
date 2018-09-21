@@ -2,11 +2,11 @@
   <div>
     <navBar></navBar>
     <div class="container blogContainer bg">
-      <form class="mt-3 mb-1" id="search">
+      <!-- <form class="mt-3 mb-1" id="search">
           <div class="form-group">
               <input type="text" class="form-control"  placeholder="Search" v-model="search">
           </div>
-      </form>
+      </form> -->
 
       <div id="posts" v-for="post in allPosts.slice().reverse()" v-bind:key=post._id>
         <div class="post my-5">
@@ -215,5 +215,14 @@ h1,h2,h3,h4,h5 {
 }
 .tag:hover{
   text-decoration: none;
+}
+
+@media (max-width:700px){
+  .blogContainer{
+    width: 100%;
+  }
+  .post{
+    width:100%;
+  }
 }
 </style>

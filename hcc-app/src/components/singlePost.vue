@@ -87,7 +87,7 @@ export default {
     }
   },
   created() {
-    axios.get(`${process.env.ROOT_API}/posts/${this.id}`).then(res => {
+    axios.get(`/posts/${this.id}`).then(res => {
       this.post = res.data;
     });
     this.userName=JSON.parse(localStorage.getItem('userData')).userName;  
@@ -215,6 +215,12 @@ h1,h2,h3,h4,h5 {
   font-family: "Lora";
   font-size: 1.2rem;
   margin: auto 0;
+}
+
+@media (max-width:700px){
+  .post{
+    width: 100%;
+  }
 }
 
 </style>
